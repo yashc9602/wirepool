@@ -1,13 +1,22 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import SignupScreen from './screens/Auth/SignupScreen';
+import AppDrawer from './navigation/AppDrawer';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <SignupScreen />
-    </View>
+    < NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen 
+          name= "App Drawer"
+          component={AppDrawer}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer> 
   );
 }
 
