@@ -22,7 +22,7 @@ const screenOptions = {
 
 const AppDrawer = () => {
   return (
-    <Tab.Navigator screenOption={screenOptions}>
+    <Tab.Navigator screenOptions={screenOptions}>
       <Tab.Screen
        name="Home" 
        component={Home}
