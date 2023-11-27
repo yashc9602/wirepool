@@ -8,6 +8,7 @@ import { Home } from "../pages";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import { Search, Bookings, Cart } from '../pages';
+import ProfilePage from "../pages/ProfilePage";
 
 const StackNavigator = () => {
   const stack = createNativeStackNavigator();
@@ -116,6 +117,13 @@ const StackNavigator = () => {
           component={BottomTabs}
           options={{
             headerShown: false,
+          }}
+        />
+        <stack.Screen
+          name="Profile"
+          component={ProfilePage}
+          options={{
+            headerShown: true,
           }}
         />
       </stack.Navigator>

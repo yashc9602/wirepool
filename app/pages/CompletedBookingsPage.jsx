@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const ServiceListPage = () => {
+const CompletedBookingsPage = () => {
   return (
     <View>
-      <Text>ServiceListPage</Text>
+      <Text>CompletedBookingsPage</Text>
     </View>
   )
 }
 
-export default ServiceListPage
+export default CompletedBookingsPage
 
 const styles = StyleSheet.create({})
