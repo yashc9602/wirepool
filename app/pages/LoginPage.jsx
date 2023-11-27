@@ -47,7 +47,7 @@ const LoginPage = () => {
         navigation.replace("Main");
       })
       .catch((error) => {
-        Alert.alert("Login Error", "Invalid Email")
+        Alert.alert("Login Error", "Invalid Email");
         console.log(error);
       });
   };
