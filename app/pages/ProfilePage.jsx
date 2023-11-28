@@ -23,7 +23,7 @@ const ProfilePage = () => {
     const fetchUserProfile = async () => {
       try {
         const response = await axios.get(
-          `http://192.168.18.149:8000/profile/${userId}`
+          `http://192.168.0.102:8000/profile/${userId}`
         );
         const { user } = response.data;
         setUser(user);
