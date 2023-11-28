@@ -1,3 +1,4 @@
+// aryan
 import {
   StyleSheet,
   Text,
@@ -28,7 +29,7 @@ const RegistrationPage = () => {
 
     // send a POST  request to the backend API to register the user
     axios
-      .post("http://192.168.18.149:8000/register", user)
+      .post("http://192.168.56.1:8000/register", user)
       .then((response) => {
         console.log(response);
         Alert.alert(
