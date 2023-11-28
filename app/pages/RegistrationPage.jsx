@@ -1,4 +1,4 @@
-// aryam 
+// aryan
 import {
   StyleSheet,
   Text,
