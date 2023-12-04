@@ -9,6 +9,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from '@expo/vector-icons';
 import { Search, Bookings, Cart } from '../pages';
 import ProfilePage from "../pages/ProfilePage";
+import ServiceListPage from "../pages/ServiceListPage";
+import ServiceDetailsPage from "../pages/ServiceDetailsPage";
+
+
 
 const StackNavigator = () => {
   const stack = createNativeStackNavigator();
@@ -122,6 +126,27 @@ const StackNavigator = () => {
         <stack.Screen
           name="Profile"
           component={ProfilePage}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceListPage"
+          component={ServiceListPage}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceDetailsPage"
+          component={ServiceDetailsPage}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="Cart"
+          component={Cart}
           options={{
             headerShown: true,
           }}
