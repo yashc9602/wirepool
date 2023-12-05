@@ -83,6 +83,7 @@ const Home = () => {
           }}
         >
           <Pressable
+            onPress={() => navigation.navigate("Search")}
             style={{
               padding: 10,
               flexDirection: "row",
@@ -90,7 +91,7 @@ const Home = () => {
               marginHorizontal: 7,
               gap: 10,
               backgroundColor: "white",
-              borderRadius: 20,
+              borderRadius: 30,
               height: 40,
               flex: 1,
               width: "95%",
