@@ -13,6 +13,7 @@ import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { UserContext, UserType } from "../UserContext";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const ProfilePage = () => {
   const { userId, setUserId } = UserContext(UserType);
@@ -34,7 +35,7 @@ const ProfilePage = () => {
 
     fetchUserProfile();
   }, []);
-  
+
   const logout = () => {
     clearAuthToken();
   };
@@ -45,10 +46,104 @@ const ProfilePage = () => {
   };
   return (
     <SafeAreaView>
-      <Text>Welcome {user?.name}</Text>
-      <Pressable onPress={logout} style={{padding:20}}>
-        <Text style={{fontSize:24, textAlign:"right"}} onPress={logout}>Logout</Text>
-      </Pressable>
+      {/**profile pic,username and phone number*/}
+      <Text
+        style={{
+          borderColor: "lightgrey",
+          borderWidth: 1,
+          height: 0,
+          marginTop: 0,
+        }}
+      ></Text>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItelocatiodisplams: "center",
+          gap: 10,
+          padding: 20,
+          backgroundColor: "#FAE5D3",
+        }}
+      >
+        <Image
+          style={{
+            width: 60,
+            height: 60,
+            backgroundColor: "white",
+            marginLeft: 30,
+            borderRadius: 90,
+          }}
+          source={require("../assets/images/logo.png")}
+        />
+        <View>
+          <Text
+            style={{
+              padding: 2,
+              fontSize: 23,
+              fontWeight: "bold",
+              marginLeft: 20,
+            }}
+          >
+            Username{user?.name}
+          </Text>
+          <Text
+            style={{
+              padding: 2,
+              fontSize: 18,
+              fontWeight: "normal",
+              marginLeft: 20,
+            }}
+          >
+            +91 99999999{user?.pno}
+          </Text>
+        </View>
+      </View>
+      {/**line */}
+      <Text
+        style={{
+          borderColor: "lightgrey",
+          borderWidth: 1,
+          height: 0,
+          marginTop: 0,
+        }}
+      ></Text>
+      <View style={{ fontSize: 24, textAlign: "right", padding: 50 }}>
+        <Text style={{ fontSize: 24, textAlign: "right", margin: 10 }}>
+          Premium
+        </Text>
+        <Text style={{ fontSize: 24, textAlign: "right", margin: 10 }}>
+          Settings
+        </Text>
+        <Text style={{ fontSize: 24, textAlign: "right", margin: 10 }}>
+          Help & Feedback
+        </Text>
+        <Text style={{ fontSize: 24, textAlign: "right", margin: 10 }}>
+          About
+        </Text>
+        <Pressable onPress={logout} style={{ padding: 17 }}>
+          <View style={{ flexDirection: "row" }}>
+            <MaterialIcons
+              style={{
+                fontSize: 24,
+                textAlign: "right",
+                marginLeft: 173,
+                marginRight: 8,
+              }}
+              name="logout"
+              size={24}
+              color="black"
+            />
+            <Text style={{ fontSize: 24, textAlign: "right" }} onPress={logout}>
+              Logout
+            </Text>
+          </View>
+        </Pressable>
+      </View>
+      <View style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
+        <Image
+          style={{ width: 250, height: 150 }}
+          source={require("../assets/images/logo-black.png")}
+        />
+      </View>
     </SafeAreaView>
   );
 };

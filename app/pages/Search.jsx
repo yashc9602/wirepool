@@ -10,11 +10,12 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
 import SearchFilter from "../components/SearchFilter";
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Search = () => {
+  const navigation = useNavigation();
   const words = [
     {
       name: " Electrical",
@@ -35,7 +36,7 @@ const Search = () => {
   return (
     <SafeAreaView
       style={{
-        paddingTop: Platform.OS === "anderoid" ? 40 : 0,
+        paddingTop: Platform.OS === "android" ? 40 : 0,
         flex: 1,
         backgroundColor: "white",
       }}
@@ -77,9 +78,13 @@ const Search = () => {
               clearButtonMode="always"
             />
           </Pressable>
-          <Feather name="mic" size={24} color="black" />
+          <Pressable onPress={() => navigation.navigate("Profile")}>
+            <Ionicons name="person-circle-outline" size={36} color="black" />
+          </Pressable>
         </View>
-        <SearchFilter data={words} input={text} setInput={setText} />
+        <View style={{ fontSize: 20, backgroundColor: "white" }}>
+          <SearchFilter data={words} input={text} setInput={setText} />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

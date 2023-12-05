@@ -18,7 +18,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import Corousel from "../components/Corousel";
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign } from "@expo/vector-icons";
 
 const ServiceDetailsPage = () => {
   const navigation = useNavigation();
@@ -29,25 +29,25 @@ const ServiceDetailsPage = () => {
       id: "1",
       title: "Fan installation/repair",
       amount: "399",
-      time:"30",
+      time: "30",
     },
     {
       id: "2",
       title: "Wiring and Rewiring",
       amount: "699",
-      time:"30",
+      time: "30",
     },
     {
       id: "3",
       title: "Lighting Installation",
       amount: "499",
-      time:"30",
+      time: "30",
     },
     {
       id: "4",
       title: "Lighting Installation",
       amount: "599",
-      time:"30",
+      time: "30",
     },
   ];
   const handleAddClick = (item) => {
@@ -89,7 +89,6 @@ const ServiceDetailsPage = () => {
                       flexDirection: "row",
                     }}
                   >
-                    
                     <View>
                       <Text
                         style={{
@@ -101,46 +100,51 @@ const ServiceDetailsPage = () => {
                       >
                         {item.title}
                       </Text>
-                      <View style={{flexDirection: "row",}}>
-                      <Text
-                        style={{
-                          padding: 5,
-                          fontSize:15,
-                          marginLeft: 20,
-                        }}
-                      >
-                        Rs. {item.amount}
-                      </Text>
+                      <View style={{ flexDirection: "row" }}>
+                        <Text
+                          style={{
+                            padding: 5,
+                            fontSize: 15,
+                            marginLeft: 20,
+                          }}
+                        >
+                          Rs. {item.amount}
+                        </Text>
 
-                      <Text
-                        style={{
-                          padding: 5,
-                          fontSize:15,
-                          marginLeft: 20,
-                        }}
-                      >
-                        :  {item.time} mins
-                      </Text>
-
+                        <Text
+                          style={{
+                            padding: 5,
+                            fontSize: 15,
+                            marginLeft: 20,
+                          }}
+                        >
+                          : {item.time} mins
+                        </Text>
                       </View>
-                      
                     </View>
                     {/**fow add item */}
                     <View
-                    style={{
-                      flexDirection: "row",
-                      backgroundColor: "white",
-                      paddingVertical: 2,
-                      width: 100,
-                      justifyContenct: "center",
-                      alignItems: "center",
-                      marginTop: 10,
-                      borderRadius: 90,
-                      alignContent: "center",
-                      marginHorizontal: 15,
-                      marginBottom: 10,
-                    }}>
-                      <AntDesign onPress={() => handleAddClick(item)} style={{padding:10}} name="pluscircleo" size={24} color="black" />
+                      style={{
+                        flexDirection: "row",
+                        backgroundColor: "white",
+                        paddingVertical: 2,
+                        width: 100,
+                        justifyContenct: "center",
+                        alignItems: "center",
+                        marginTop: 10,
+                        borderRadius: 90,
+                        alignContent: "center",
+                        marginHorizontal: 15,
+                        marginBottom: 10,
+                      }}
+                    >
+                      <AntDesign
+                        onPress={() => handleAddClick(item)}
+                        style={{ padding: 10 }}
+                        name="pluscircleo"
+                        size={24}
+                        color="black"
+                      />
                       <Text>Add</Text>
                     </View>
                   </View>
@@ -151,9 +155,9 @@ const ServiceDetailsPage = () => {
         </View>
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default ServiceDetailsPage
+export default ServiceDetailsPage;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
