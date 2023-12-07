@@ -8,7 +8,6 @@ const Bookings = () => {
   const [allBookings, setAllBookings] = useState([]);
   const [inProgressBookings, setInProgressBookings] = useState([]);
   const [activeTab, setActiveTab] = useState('allBookings');
-
   const animatedValue = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -25,6 +24,10 @@ const Bookings = () => {
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+    animateIndicator(tab);
+  };
+
+  const animateIndicator = (tab) => {
     Animated.spring(animatedValue, {
       toValue: tab === 'allBookings' ? 0 : tab === 'inProgress' ? 1 : 2,
       useNativeDriver: false,
@@ -47,7 +50,7 @@ const Bookings = () => {
                 style={styles.box}
                 onPress={() => navigation.navigate('BookingDetail', { booking: item })}
               >
-                <Text>{`${item.serviceType}\n${item.date}\n${item.status}`}</Text>
+                <Text style={styles.tabText}>{`${item.serviceType}\n${item.date}\n${item.status}`}</Text>
               </TouchableOpacity>
             )}
           />
@@ -65,7 +68,6 @@ const Bookings = () => {
       <View style={styles.container}>
         <Text style={styles.heading}>Bookings</Text>
         <View style={styles.tabsContainer}>
-          <Animated.View style={[styles.tabIndicator, { transform: [{ translateX }] }]} />
           <TouchableOpacity
             style={[styles.tab, activeTab === 'allBookings' && styles.activeTab]}
             onPress={() => handleTabChange('allBookings')}
@@ -84,6 +86,7 @@ const Bookings = () => {
           >
             <Text style={styles.tabText}>Completed</Text>
           </TouchableOpacity>
+          <Animated.View style={[styles.tabIndicator, { transform: [{ translateX }] }]} />
         </View>
         {renderActiveTab()}
       </View>
@@ -106,11 +109,13 @@ const styles = StyleSheet.create({
   tabsContainer: {
     flexDirection: 'row',
     marginBottom: 16,
+    position: 'relative',
   },
   tab: {
-    flex: 1,
+    flex: 2,
     paddingVertical: 8,
     alignItems: 'center',
+    zIndex: 3, // Add zIndex to the tab style
   },
   activeTab: {
     borderBottomColor: 'black',
@@ -121,20 +126,22 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 90,
-    width: 317,
+    width: 300,
     marginBottom: 16,
     backgroundColor: '#c0b9dd',
     borderRadius: 20,
     padding: 16,
   },
   tabIndicator: {
-    height: 2,
-    backgroundColor: 'black',
+    height: 30,
+    backgroundColor: '#c0b9dd',
     position: 'absolute',
     bottom: 0,
-    width: 120, // Adjust this based on your tab width
+    borderRadius: 20,
+    width: 100,
+    zIndex: 2,
+    
   },
 });
 
 export default Bookings;
-``
