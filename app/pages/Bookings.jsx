@@ -1,15 +1,123 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import InProgressBookings from './InProgressBookings'; // Import the InProgressBookings component
+import CompletedBookingsPage from './CompletedBookingsPage'; // Import the CompletedBookingsPage component
 
 const Bookings = () => {
+  const [allBookings, setallBookings] = useState([]);
+  const [inProgressBookings, setInProgressBookings] = useState([]);
+  const [activeTab, setActiveTab] = useState('allBookings');
+
+  useEffect(() => {
+    // Mock data for testing
+    const mockData = [
+      { id: 1, serviceType: 'Electrical Repair', date: '2023-06-06', status: 'inProgress' },
+      { id: 2, serviceType: 'Plumbing Service',
+       date: '2023-06-10', status: 'completed' },
+      // Add more mock data as needed
+    ];
+
+    setallBookings(mockData);
+    setInProgressBookings(mockData.filter((booking) => booking.status === 'inProgress'));
+  }, []);
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
+  const renderActiveTab = () => {
+    switch (activeTab) {
+      case 'inProgress':
+        return <InProgressBookings inProgressBookings={inProgressBookings} />;
+      case 'completed':
+        return <CompletedBookingsPage />;
+      default:
+        return (
+          <FlatList
+            data={allBookings}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={styles.box}
+                onPress={() => navigation.navigate('BookingDetail', { booking: item })}
+              >
+                <Text>{`${item.serviceType} \n ${item.date} \n ${item.status}`}</Text>
+              </TouchableOpacity>
+            )}
+          />
+        );
+    }
+  };
+
   return (
-    <SafeAreaView>
-      <Text>Bookings</Text>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <Text style={styles.heading}>Bookings</Text>
+        <View style={styles.tabsContainer}>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === 'allBookings' && styles.activeTab]}
+            onPress={() => handleTabChange('allBookings')}
+          >
+            <Text style={styles.tabText}>All Bookings</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === 'inProgress' && styles.activeTab]}
+            onPress={() => handleTabChange('inProgress')}
+          >
+            <Text style={styles.tabText}>In Progress</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.tab, activeTab === 'completed' && styles.activeTab]}
+            onPress={() => handleTabChange('completed')}
+          >
+            <Text style={styles.tabText}>Completed</Text>
+          </TouchableOpacity>
+        </View>
+        {renderActiveTab()}
+      </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Bookings
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 16,
+  },
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 16,
+  },
+  tabsContainer: {
+    flexDirection: 'row',
+    marginBottom: 16,
+  },
+  tab: {
+    flex: 1,
+    paddingVertical: 8,
+    alignItems: 'center',
+    borderBottomWidth: 2,
+    borderBottomColor: 'transparent',
+  },
+  activeTab: {
+    borderBottomColor: 'black',
+  },
+  tabText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  box: {
+    height: 90,
+    width: 317,
+    marginBottom: 16,
+    backgroundColor: '#c0b9dd',
+    borderRadius: 20,
+    padding: 16,
+  },
+});
 
-const styles = StyleSheet.create({})
+export default Bookings;
