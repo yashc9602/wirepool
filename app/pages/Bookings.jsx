@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     borderRadius: 20,
     width: 100,
-    zIndex: 2,
     
+
   },
 });
 
