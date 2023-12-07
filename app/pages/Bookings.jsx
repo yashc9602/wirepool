@@ -1,29 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity, Animated } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import InProgressBookings from './InProgressBookings'; // Import the InProgressBookings component
-import CompletedBookingsPage from './CompletedBookingsPage'; // Import the CompletedBookingsPage component
+import InProgressBookings from './InProgressBookings';
+import CompletedBookingsPage from './CompletedBookingsPage';
 
 const Bookings = () => {
-  const [allBookings, setallBookings] = useState([]);
+  const [allBookings, setAllBookings] = useState([]);
   const [inProgressBookings, setInProgressBookings] = useState([]);
   const [activeTab, setActiveTab] = useState('allBookings');
+
+  const animatedValue = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     // Mock data for testing
     const mockData = [
       { id: 1, serviceType: 'Electrical Repair', date: '2023-06-06', status: 'inProgress' },
-      { id: 2, serviceType: 'Plumbing Service',
-       date: '2023-06-10', status: 'completed' },
+      { id: 2, serviceType: 'Plumbing Service', date: '2023-06-10', status: 'completed' },
       // Add more mock data as needed
     ];
 
-    setallBookings(mockData);
+    setAllBookings(mockData);
     setInProgressBookings(mockData.filter((booking) => booking.status === 'inProgress'));
   }, []);
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
+    Animated.spring(animatedValue, {
+      toValue: tab === 'allBookings' ? 0 : tab === 'inProgress' ? 1 : 2,
+      useNativeDriver: false,
+    }).start();
   };
 
   const renderActiveTab = () => {
@@ -42,7 +47,7 @@ const Bookings = () => {
                 style={styles.box}
                 onPress={() => navigation.navigate('BookingDetail', { booking: item })}
               >
-                <Text>{`${item.serviceType} \n ${item.date} \n ${item.status}`}</Text>
+                <Text>{`${item.serviceType}\n${item.date}\n${item.status}`}</Text>
               </TouchableOpacity>
             )}
           />
@@ -50,11 +55,17 @@ const Bookings = () => {
     }
   };
 
+  const translateX = animatedValue.interpolate({
+    inputRange: [0, 1, 2],
+    outputRange: [0, 120, 240], // Adjust these values based on your tab width
+  });
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.heading}>Bookings</Text>
         <View style={styles.tabsContainer}>
+          <Animated.View style={[styles.tabIndicator, { transform: [{ translateX }] }]} />
           <TouchableOpacity
             style={[styles.tab, activeTab === 'allBookings' && styles.activeTab]}
             onPress={() => handleTabChange('allBookings')}
@@ -100,8 +111,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 8,
     alignItems: 'center',
-    borderBottomWidth: 2,
-    borderBottomColor: 'transparent',
   },
   activeTab: {
     borderBottomColor: 'black',
@@ -118,6 +127,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 16,
   },
+  tabIndicator: {
+    height: 2,
+    backgroundColor: 'black',
+    position: 'absolute',
+    bottom: 0,
+    width: 120, // Adjust this based on your tab width
+  },
 });
 
 export default Bookings;
+``

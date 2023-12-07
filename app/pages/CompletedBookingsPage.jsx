@@ -35,7 +35,7 @@ const CompletedBookingsPage = () => {
 
       {
         id: 2,
-        serviceType: 'Mechanical Service',
+        serviceType: 'Mechanical Servicee',
         date: '08-12-2023',
         additionalDetail: 'Completed',
       },

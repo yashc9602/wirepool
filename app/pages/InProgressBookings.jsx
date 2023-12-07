@@ -11,7 +11,7 @@ const InProgressBookings = () => {
     },
     {
       name: "Govinda",
-      service: "Electrical Repair",
+      service: "Electrical Repaire",
       arrivalTime: "Jun 6, 2023",
       //image: require("./images/progress.png"),
     },
