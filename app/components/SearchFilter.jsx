@@ -1,16 +1,21 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
 const SearchFilter = ({ data, input, setInput }) => {
+  const navigation = useNavigation();
+  const [text, setText] = React.useState("");
+  console.log(text);
   return (
     <View style={{ marginTop: 10, marginLeft: 1, marginRight: 45 }}>
       <FlatList
+      
         data={data}
         renderItem={({ item }) => {
           if (input === "") {
             return (
               <View>
-                <Text
+                <Text onPress={() => navigation.navigate("ServiceDetailsPage")}
                   style={{ fontSize: 20, fontWeight: "500", marginLeft: 40 }}
                 >
                   {item.name}

@@ -27,8 +27,8 @@ const ServiceListPage = () => {
   const ServiceData = [
     {
       id: "1",
-      title: "Item 1",
-      paragraph: "blahblahhhhhhhh",
+      title: "Electrical Repair",
+      paragraph: "Get all kinds of repairs done at the cost of your own bla and blaa this to bla that.",
       image:
         "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
     },
@@ -68,7 +68,7 @@ const ServiceListPage = () => {
       <ScrollView>
         <View>
           <Text style={{ padding: 10, fontSize: 30, fontWeight: "bold" }}>
-            Popular Services
+            Electrical
           </Text>
           <View
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -103,10 +103,10 @@ const ServiceListPage = () => {
                       }}
                       source={item.image}
                     />
-                    <View>
+                    <View style={{flexShrink:1}}>
                       <Text
                         style={{
-                          padding: 10,
+                          padding: 5,
                           fontSize: 20,
                           fontWeight: "bold",
                           marginLeft: 20,
@@ -116,9 +116,9 @@ const ServiceListPage = () => {
                       </Text>
                       <Text
                         style={{
-                          padding: 1,
+                          padding: 10,
                           fontSize: 15,
-                          marginLeft: 20,
+                          marginLeft: 15
                         }}
                       >
                         {item.paragraph}
