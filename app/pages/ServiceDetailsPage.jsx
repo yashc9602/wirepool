@@ -145,7 +145,7 @@ const ServiceDetailsPage = () => {
                         size={24}
                         color="black"
                       />
-                      <Text>Add</Text>
+                      <Text onPress={() => handleAddClick(item)}>Add</Text>
                     </View>
                   </View>
                 </TouchableOpacity>
