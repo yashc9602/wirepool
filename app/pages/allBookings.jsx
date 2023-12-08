@@ -9,6 +9,7 @@ const mockBookings = [
     id: 1,
     status: 'inProgress',
     serviceType: 'Electrical Repaire',
+    serviceType: 'Electrical Repair',
     date: '2023-06-06',
   },
   {
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     width: 300,
     marginBottom: 8,
 
+    
   },
 });
 

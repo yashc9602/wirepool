@@ -144,7 +144,7 @@ const Home = () => {
             >
               <Image
                 style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/63/42/electronic-service-and-repair-icon-design-vector-35966342.webp"
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -160,7 +160,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat1</Text>
+                <Text>Electrical</Text>
               </View>
             </Pressable>
 
@@ -191,7 +191,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat2</Text>
+                <Text>Mechanical</Text>
               </View>
             </Pressable>
             {/**category3 */}
@@ -222,7 +222,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat3</Text>
+                <Text>Process Optimization</Text>
               </View>
             </Pressable>
             {/**category4 */}
@@ -252,7 +252,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat4</Text>
+                <Text>Consultation</Text>
               </View>
             </Pressable>
           </View>
