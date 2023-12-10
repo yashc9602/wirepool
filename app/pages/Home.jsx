@@ -170,7 +170,7 @@ const Home = () => {
               </View>
             </Pressable>
 
-            {/**category2 */}
+            {/**category2  in*/}
             <Pressable
               style={{
                 backgroundColor: "#f2e9e4",
