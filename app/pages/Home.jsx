@@ -49,11 +49,11 @@ const Home = () => {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            marginRight: 16,
+            marginLeft:10,
           }}
         >
           <Image
-            style={{ width: 30, height: 30 }}
+            style={{ width: 30, height: 30}}
             source={require("../assets/images/logo.png")}
           />
           <Pressable onPress={() => navigation.navigate("Profile")}>
@@ -143,7 +143,7 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
+                style={{ width: 180, height: 180, resizeMode: "cover",borderTopLeftRadius:20,borderTopRightRadius:20 }}
                 source={require("../assets/images/cat1.jpg")}
               />
               <View
@@ -174,8 +174,8 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/21/78/repair-service-flat-icon-vector-7952178.webp"
+                style={{ width: 180, height: 180, resizeMode: "cover",borderTopLeftRadius:20,borderTopRightRadius:20 }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -204,8 +204,8 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{ width: 180, height: 180, resizeMode: "cover",borderTopLeftRadius:20,borderTopRightRadius:20 }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -235,8 +235,8 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{ width: 180, height: 180, resizeMode: "cover",borderTopLeftRadius:20,borderTopRightRadius:20 }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
