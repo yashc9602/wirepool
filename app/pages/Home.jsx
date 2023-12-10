@@ -49,39 +49,58 @@ const Home = () => {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-            marginRight: 16,
+            marginLeft: 10,
+
           }}
         >
-          <Image
-            style={{ width: 30, height: 30 }}
+          {/* <Image
+            style={{ width: 30, height: 30}}
             source={require("../assets/images/logo.png")}
-          />
+          /> */}
+          
+          <Entypo name="location-pin" size={30} style={{ marginTop: 5 }} color="black" />
+          <Pressable>
+            <Text style={{ fontSize: 24, fontWeight: "400", marginLeft: 5, marginTop: 5, marginRight:180 }}>Bangalore</Text>
+          </Pressable>
           <Pressable onPress={() => navigation.navigate("Profile")}>
-            <Ionicons name="person-circle-outline" size={36} color="black" />
+            <Ionicons name="person-circle-outline" style={{ marginBottom: 1 }} size={36} color="black" />
           </Pressable>
         </View>
+        <View
+          style={{
+           // backgroundColor: "#c0b9dd",
+            //padding: 10,
+           // marginRight: 'auto',
+            flexDirection: "row",
+            alignItems: 'baseline',
+          }}
+        >
+        </View>
+       
         <View
           style={{
             flexDirection: "row",
             alignItelocatiodisplams: "center",
             gap: 5,
-            padding: 10,
-            backgroundColor: "#FAE5D3",
+            padding: 15,
+           // backgroundColor: "#c0b9dd",
           }}
         >
-          <Entypo name="location-pin" size={24} color="black" />
+        
+          {/* <Entypo name="location-pin" size={26} color="black" />
+          
           <Pressable>
-            <Text style={{ fontSize: 15, fontWeight: "500" }}>Bangalore</Text>
+            <Text style={{ fontSize: 22, fontWeight: "400" }}>Bangalore</Text>
           </Pressable>
         </View>
         <View
           style={{
-            backgroundColor: "#c9ada7",
+           // backgroundColor: "#c0b9dd",
             padding: 10,
             flexDirection: "row",
             align: "center",
           }}
-        >
+        > */}
           <Pressable
             onPress={() => navigation.navigate("Search")}
             style={{
@@ -90,8 +109,9 @@ const Home = () => {
               alignItems: "center",
               marginHorizontal: 7,
               gap: 10,
-              backgroundColor: "white",
+              backgroundColor: "#D9D9D9",
               borderRadius: 30,
+              borderColor:"black",
               height: 40,
               flex: 1,
               width: "95%",
@@ -111,7 +131,7 @@ const Home = () => {
               clearButtonMode="always"
             />
           </Pressable>
-          <Feather name="mic" size={25} color="black" />
+          {/* <Feather name="mic" size={25} style={{ marginTop: 8 }} color="black" /> */}
         </View>
 
         <View>
@@ -127,7 +147,7 @@ const Home = () => {
               flexDirection: "row",
               alignItems: "center",
               flexWrap: "wrap",
-              backgroundColor: "white",
+              //backgroundColor: "#c0b9dd",
               margin: 10,
               borderRadius: 20,
               borderColor: "black",
@@ -136,123 +156,165 @@ const Home = () => {
             {/**category1 */}
             <Pressable
               style={{
-                backgroundColor: "#f2e9e4",
+                backgroundColor: "#d9d9d9",
                 borderRadius: 20,
-                margin: 3,
+                margin:13,
+                width:145,
+                height:220,
               }}
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/63/42/electronic-service-and-repair-icon-design-vector-35966342.webp"
+
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
                   backgroundColor: "white",
                   paddingVertical: 5,
-                  width: 150,
+                  width: 125,
                   justifyContenct: "center",
                   alignItems: "center",
-                  marginTop: 10,
+                  marginTop: 25,
+                  marginLeft:10,
+                  marginRight:10,
                   borderRadius: 90,
                   alignContent: "center",
                   marginHorizontal: 15,
                   marginBottom: 10,
                 }}
               >
-                <Text>cat1</Text>
+                <Text>Electrical</Text>
+
               </View>
             </Pressable>
 
-            {/**category2 */}
+            {/**category2  in*/}
             <Pressable
               style={{
-                backgroundColor: "#f2e9e4",
+                backgroundColor: "#d9d9d9",
                 borderRadius: 20,
-                margin: 3,
+                margin:0,
+                width:145,
+                height:220,
               }}
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/21/78/repair-service-flat-icon-vector-7952178.webp"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
                   backgroundColor: "white",
                   paddingVertical: 5,
-                  width: 150,
+                  width: 125,
                   justifyContenct: "center",
                   alignItems: "center",
-                  marginTop: 10,
+                  marginTop: 4,
+                  marginLeft:10,
+                  marginRight:10,
                   borderRadius: 90,
                   alignContent: "center",
                   marginHorizontal: 15,
-                  marginBottom: 10,
+                  marginBottom: 40,
                 }}
               >
-                <Text>cat2</Text>
+                <Text>Mechanical</Text>
               </View>
             </Pressable>
             {/**category3 */}
             <Pressable
               style={{
-                backgroundColor: "#f2e9e4",
+                backgroundColor: "#d9d9d9",
                 borderRadius: 20,
-                margin: 3,
+                margin:13,
+                width:145,
+                height:220,
               }}
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
                   backgroundColor: "white",
                   paddingVertical: 5,
-                  width: 150,
+                  width: 125,
                   justifyContenct: "center",
                   alignItems: "center",
-                  marginTop: 10,
+                  marginTop: 4,
+                  marginLeft:10,
+                  marginRight:10,
                   borderRadius: 90,
                   alignContent: "center",
-                  marginLeft: 10,
                   marginHorizontal: 15,
-                  marginBottom: 10,
+                  marginBottom: 40,
                 }}
               >
-                <Text>cat3</Text>
+                <Text>Process Optimization</Text>
               </View>
             </Pressable>
             {/**category4 */}
             <Pressable
               style={{
-                backgroundColor: "#f2e9e4",
+                backgroundColor: "#d9d9d9",
                 borderRadius: 20,
-                margin: 3,
+                margin:0,
+                width:145,
+                height:220,
               }}
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
                   backgroundColor: "white",
                   paddingVertical: 5,
-                  width: 150,
+                  width: 125,
                   justifyContenct: "center",
                   alignItems: "center",
-                  marginTop: 10,
+                  marginTop: 4,
+                  marginLeft:10,
+                  marginRight:10,
                   borderRadius: 90,
                   alignContent: "center",
                   marginHorizontal: 15,
-                  marginBottom: 10,
+                  marginBottom: 40,
                 }}
               >
-                <Text>cat4</Text>
+                <Text>Consultation</Text>
               </View>
             </Pressable>
           </View>
@@ -274,7 +336,7 @@ const Home = () => {
                     style={{
                       backgroundColor: "#f2e9e4",
                       paddingVertical: 10,
-                      width: 350,
+                      width: 300,
                       justifyContenct: "center",
                       alignItems: "center",
                       marginTop: 10,
@@ -292,14 +354,14 @@ const Home = () => {
           </View>
         </View>
         <View>
-          <Text style={{ padding: 50, fontSize: 20, fontWeight: "bold" }}>
+          <Text style={{ padding: 20, fontSize: 20, fontWeight: "bold" }}>
             Didn’t find what you were looking for?
           </Text>
           <TouchableOpacity
             style={styles.button}
             onPress={() => Alert.alert("Button pressed! ->feedback page")}
           >
-            <Text style={styles.buttonText}>Tap Me !</Text>
+            <Text style={styles.buttonText}>Suggest a service</Text>
           </TouchableOpacity>
 
           <Text
@@ -308,13 +370,14 @@ const Home = () => {
               padding: 50,
               fontSize: 20,
               fontWeight: "bold",
+              
             }}
           >
             Suggest a service
           </Text>
         </View>
         <Text
-          style={{ height: 10, borderColor: "#f2e9e4", borderWidth: 40 }}
+          style={{ textAlign:"center", height: 10, borderColor: "#f2e9e4", borderWidth: 40,  }}
         ></Text>
         <View></View>
       </ScrollView>
@@ -327,10 +390,10 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: "black",
   },
   button: {
-    backgroundColor: "#4a4e69",
+    backgroundColor: "#c0b9dd",
     padding: 10,
     borderRadius: 50,
   },
