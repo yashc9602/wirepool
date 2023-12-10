@@ -48,9 +48,9 @@ const Home = () => {
         <View
           style={{
             flexDirection: "row",
-            justifySelf: "start",
-            marginRight: 16,
-            alignItems:"baseline,"
+            justifyContent: "space-between",
+            marginLeft: 10,
+
           }}
         >
           {/* <Image
@@ -165,7 +165,15 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 140, height: 160, resizeMode: "contain" }}
+
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+
                 source={require("../assets/images/cat1.jpg")}
               />
               <View
@@ -185,11 +193,11 @@ const Home = () => {
                 }}
               >
                 <Text>Electrical</Text>
-                
+
               </View>
             </Pressable>
 
-            {/**category2 */}
+            {/**category2  in*/}
             <Pressable
               style={{
                 backgroundColor: "#d9d9d9",
@@ -201,8 +209,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/21/78/repair-service-flat-icon-vector-7952178.webp"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -235,8 +249,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -269,8 +289,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
