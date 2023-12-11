@@ -134,7 +134,7 @@ const Cart = ({ route }) => {
           alignContent: "center",
           marginHorizontal: 15,
           marginBottom: 10,
-          marginLeft: 400,
+          marginLeft: 45,
         }}
       >
         <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
