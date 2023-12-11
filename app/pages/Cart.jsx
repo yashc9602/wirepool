@@ -68,17 +68,11 @@ const Cart = ({ route }) => {
   
     const updatedCart = cartItems.map((cartItem) => {
       if (cartItem.id === id && parseInt(cartItem.time) > baseTime) {
-        let newTime = parseInt(cartItem.time) - baseTime;
-        let newAmount = parseInt(cartItem.amount) - baseAmount;
-  
-        let decrementCounter = cartItem.decrementCounter || 0;
-        decrementCounter = Math.max(0, decrementCounter - 1);
-  
         return {
           ...cartItem,
-          time: newTime.toString(),
-          amount: newAmount.toString(),
-          decrementCounter: decrementCounter,
+          time: parseInt(cartItem.time) -baseTime,
+          amount: parseInt(cartItem.amount) - baseAmount,
+          incrementCounter: (cartItem.incrementCounter || 0) - 1,
         };
       }
       return cartItem;
