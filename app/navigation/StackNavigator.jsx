@@ -11,6 +11,7 @@ import { Search, Bookings, Cart } from '../pages';
 import ProfilePage from "../pages/ProfilePage";
 import ServiceListPage from "../pages/ServiceListPage";
 import ServiceDetailsPage from "../pages/ServiceDetailsPage";
+import Chat from "../pages/Chat";
 
 
 
@@ -147,6 +148,13 @@ const StackNavigator = () => {
         <stack.Screen
           name="Cart"
           component={Cart}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="Chat"
+          component={Chat}
           options={{
             headerShown: true,
           }}
