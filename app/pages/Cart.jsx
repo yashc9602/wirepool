@@ -85,6 +85,8 @@ const Cart = ({ route }) => {
         return {
           ...cartItem,
           time: parseInt(cartItem.time) - baseTime,
+          time: parseInt(cartItem.time) -baseTime,
+
           amount: parseInt(cartItem.amount) - baseAmount,
           incrementCounter: (cartItem.incrementCounter || 0) - 1,
         };
