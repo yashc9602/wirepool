@@ -64,7 +64,7 @@ const Cart = ({ route }) => {
   
   const handleDecrementTime = (id) => {
     const baseTime = parseInt(item.time); 
-    const baseAmount = parseInt(item.amount); 
+    const baseAmount = parseInt(item.amount);
   
     const updatedCart = cartItems.map((cartItem) => {
       if (cartItem.id === id && parseInt(cartItem.time) > baseTime) {
