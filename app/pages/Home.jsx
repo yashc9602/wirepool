@@ -26,6 +26,10 @@ const Home = () => {
   const [text, setText] = React.useState("");
   console.log(text);
 
+  const navigateToChat = () => {
+    navigation.navigate('Chat'); 
+  };
+
   const data = [
     { id: "1", title: "Item 1" },
     { id: "2", title: "Item 2" },
@@ -317,6 +321,12 @@ const Home = () => {
         ></Text>
         <View></View>
       </ScrollView>
+      <TouchableOpacity
+        style={styles.floatingButton}
+        onPress={navigateToChat}
+      >
+        <Ionicons name="chatbubble-ellipses-outline" size={24} color="white" />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -338,5 +348,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  floatingButton: {
+    position: "absolute",
+    marginBottom: 42,
+    bottom: 20,
+    right: 20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#4A4E69",
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5, 
   },
 });
