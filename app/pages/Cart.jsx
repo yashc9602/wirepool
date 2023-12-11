@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, AsyncStorage, FlatList, TouchableOpacity, StyleSheet, Alert, StatusBar, Platform, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  View,
+  Text,
+  AsyncStorage,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+  Alert,
+  StatusBar,
+  Platform,
+  SafeAreaView,
+} from "react-native";
 
 const Cart = ({ route }) => {
   const [cartItems, setCartItems] = useState([]);
-  const { item } = route.params || {}; 
+  const { item } = route.params || {};
 
   useEffect(() => {
     if (item) {
@@ -33,21 +44,24 @@ const Cart = ({ route }) => {
 
   const handleCheckout = () => {
     const total = calculateTotal();
-    Alert.alert('Checkout', `Total Amount: Rs. ${total}`, [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Confirm', onPress: () => confirmCheckout(total) },
+    Alert.alert("Checkout", `Total Amount: Rs. ${total}`, [
+      { text: "Cancel", style: "cancel" },
+      { text: "Confirm", onPress: () => confirmCheckout(total) },
     ]);
   };
 
   const confirmCheckout = (total) => {
-    Alert.alert('Payment Successful', `Total Amount: Rs. ${total}. Payment completed successfully.`);
+    Alert.alert(
+      "Payment Successful",
+      `Total Amount: Rs. ${total}. Payment completed successfully.`
+    );
     setCartItems([]);
   };
 
   const handleIncrementTime = (id) => {
-    const baseTime = parseInt(item.time); 
-    const baseAmount = parseInt(item.amount); 
-  
+    const baseTime = parseInt(item.time);
+    const baseAmount = parseInt(item.amount);
+
     const updatedCart = cartItems.map((cartItem) => {
       if (cartItem.id === id) {
         return {
@@ -61,58 +75,82 @@ const Cart = ({ route }) => {
     });
     setCartItems(updatedCart);
   };
-  
+
   const handleDecrementTime = (id) => {
-    const baseTime = parseInt(item.time); 
-    const baseAmount = parseInt(item.amount); 
-  
+    const baseTime = parseInt(item.time);
+    const baseAmount = parseInt(item.amount);
+
     const updatedCart = cartItems.map((cartItem) => {
       if (cartItem.id === id && parseInt(cartItem.time) > baseTime) {
-        let newTime = parseInt(cartItem.time) - baseTime;
-        let newAmount = parseInt(cartItem.amount) - baseAmount;
-  
-        let decrementCounter = cartItem.decrementCounter || 0;
-        decrementCounter = Math.max(0, decrementCounter - 1);
-  
         return {
           ...cartItem,
-          time: newTime.toString(),
-          amount: newAmount.toString(),
-          decrementCounter: decrementCounter,
+          time: parseInt(cartItem.time) - baseTime,
+          amount: parseInt(cartItem.amount) - baseAmount,
+          incrementCounter: (cartItem.incrementCounter || 0) - 1,
         };
       }
       return cartItem;
     });
     setCartItems(updatedCart);
   };
-  
-
 
   const renderCartItem = ({ item }) => (
     <View style={styles.cartItem}>
-      <Text style={styles.productName}>{item.title}</Text>
       <View style={styles.priceContainer}>
-        <Text style={styles.price}>Rs. {item.amount}</Text>
+        <Text style={styles.productName}>{item.title}</Text>
+        <Text style={styles.price}>
+          Rs. {item.amount} : {item.time} mins
+        </Text>
+      </View>
+      <View>
         <View style={styles.timeAndButtonContainer}>
-          <Text style={styles.quantity}>{item.time} mins</Text>
-          <TouchableOpacity onPress={() => handleDecrementTime(item.id)} style={styles.timeButton}>
+          <TouchableOpacity
+            onPress={() => handleDecrementTime(item.id)}
+            style={styles.timeButton}
+          >
             <Text style={styles.buttonText}> - </Text>
           </TouchableOpacity>
-          <Text style={styles.incrementCount}>{item.incrementCounter || 0}</Text>
-          <TouchableOpacity onPress={() => handleIncrementTime(item.id)} style={styles.timeButton}>
+          <Text style={styles.incrementCount}>
+            {item.incrementCounter || 0}
+          </Text>
+          <TouchableOpacity
+            onPress={() => handleIncrementTime(item.id)}
+            style={styles.timeButton}
+          >
             <Text style={styles.buttonText}> + </Text>
           </TouchableOpacity>
         </View>
+        <View
+        style={{
+          backgroundColor: "white",
+          padding: 5,
+          width: 150,
+          justifyContenct: "center",
+          alignItems: "center",
+          marginTop: 10,
+          borderRadius: 90,
+          alignContent: "center",
+          marginHorizontal: 15,
+          marginBottom: 10,
+          marginLeft: 400,
+        }}
+      >
+        <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
+          <Text style={styles.removeButton}>Remove</Text>
+        </TouchableOpacity>
       </View>
-      <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
-        <Text style={styles.removeButton}>Remove</Text>
-      </TouchableOpacity>
+      </View>
+      
     </View>
   );
 
-
   return (
-    <SafeAreaView style={{ flex: 1, paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0 }}>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+      }}
+    >
       <View style={styles.container}>
         <Text style={styles.heading}>Cart</Text>
         {cartItems.length > 0 ? (
@@ -128,7 +166,10 @@ const Cart = ({ route }) => {
         {cartItems.length > 0 && (
           <View style={styles.checkoutContainer}>
             <Text style={styles.total}>Total: Rs. {calculateTotal()}</Text>
-            <TouchableOpacity onPress={handleCheckout} style={styles.checkoutButton}>
+            <TouchableOpacity
+              onPress={handleCheckout}
+              style={styles.checkoutButton}
+            >
               <Text style={styles.checkoutText}>Checkout</Text>
             </TouchableOpacity>
           </View>
@@ -145,18 +186,19 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   cartItem: {
-    backgroundColor: '#f2e9e4',
+    backgroundColor: "#f2e9e4",
     padding: 10,
     marginVertical: 5,
     borderRadius: 10,
+    flexDirection:"row"
   },
   productName: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 5,
   },
   price: {
@@ -166,42 +208,42 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   removeButton: {
-    color: 'red',
+    color: "red",
     fontSize: 16,
-    marginTop: 5,
+    marginTop: 3,
   },
   emptyCart: {
     fontSize: 16,
   },
   checkoutContainer: {
     marginTop: 20,
-    alignItems: 'center',
+    alignItems: "center",
   },
   total: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
   },
   checkoutButton: {
-    backgroundColor: 'blue',
+    backgroundColor: "blue",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
   },
   checkoutText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
   },
   timeAndButtonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   timeButton: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     marginHorizontal: 5,
     padding: 3,
   },
