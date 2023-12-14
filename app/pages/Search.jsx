@@ -36,7 +36,7 @@ const Search = () => {
   return (
     <SafeAreaView
       style={{
-        paddingTop: Platform.OS === "android" ? 40 : 0,
+        paddingTop: Platform.OS === "android" ? 1 : 0,
         flex: 1,
         backgroundColor: "white",
       }}
