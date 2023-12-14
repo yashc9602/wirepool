@@ -11,6 +11,7 @@ import {
   Platform,
   SafeAreaView,
 } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const Cart = ({ route }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -85,7 +86,7 @@ const Cart = ({ route }) => {
         return {
           ...cartItem,
           time: parseInt(cartItem.time) - baseTime,
-          time: parseInt(cartItem.time) -baseTime,
+          time: parseInt(cartItem.time) - baseTime,
 
           amount: parseInt(cartItem.amount) - baseAmount,
           incrementCounter: (cartItem.incrementCounter || 0) - 1,
@@ -110,7 +111,7 @@ const Cart = ({ route }) => {
             onPress={() => handleDecrementTime(item.id)}
             style={styles.timeButton}
           >
-            <Text style={styles.buttonText}> - </Text>
+            <AntDesign name="minuscircle" size={24} color="black" />
           </TouchableOpacity>
           <Text style={styles.incrementCount}>
             {item.incrementCounter || 0}
@@ -119,30 +120,29 @@ const Cart = ({ route }) => {
             onPress={() => handleIncrementTime(item.id)}
             style={styles.timeButton}
           >
-            <Text style={styles.buttonText}> + </Text>
+            <AntDesign name="pluscircle" size={24} color="black" />
           </TouchableOpacity>
         </View>
         <View
-        style={{
-          backgroundColor: "white",
-          padding: 5,
-          width: 150,
-          justifyContenct: "center",
-          alignItems: "center",
-          marginTop: 10,
-          borderRadius: 90,
-          alignContent: "center",
-          marginHorizontal: 15,
-          marginBottom: 10,
-          marginLeft: 45,
-        }}
-      >
-        <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
-          <Text style={styles.removeButton}>Remove</Text>
-        </TouchableOpacity>
+          style={{
+            backgroundColor: "white",
+            padding: 8,
+            width: 160,
+            justifyContenct: "center",
+            alignItems: "center",
+            marginTop: 10,
+            borderRadius: 90,
+            alignContent: "center",
+            marginHorizontal: 50,
+            marginBottom: 10,
+            marginLeft: 40,
+          }}
+        >
+          <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
+            <Text style={styles.removeButton}>Remove</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      </View>
-      
     </View>
   );
 
@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   heading: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: "bold",
     marginBottom: 10,
   },
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginVertical: 5,
     borderRadius: 10,
-    flexDirection:"row"
+    flexDirection: "row",
   },
   productName: {
     fontSize: 18,
@@ -211,8 +211,8 @@ const styles = StyleSheet.create({
   },
   removeButton: {
     color: "red",
-    fontSize: 16,
-    marginTop: 3,
+    fontSize: 15,
+    justifyContent: "space-around",
   },
   emptyCart: {
     fontSize: 16,
@@ -227,30 +227,37 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   checkoutButton: {
-    backgroundColor: "blue",
+    backgroundColor: "#4a4e69",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 8,
   },
   checkoutText: {
     color: "white",
-    fontSize: 16,
+    fontSize: 20,
   },
   timeAndButtonContainer: {
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-around",
     alignItems: "center",
+    padding: 5,
+    backgroundColor: "white",
+    borderRadius: 90,
+    paddingVertical: 5,
+    width: 100,
+    marginHorizontal: 95,
+    marginBottom: 10,
   },
   timeButton: {
     backgroundColor: "white",
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: "black",
-    marginHorizontal: 5,
-    padding: 3,
+    borderColor: "white",
+    marginHorizontal: 3,
+    padding: 1,
   },
   buttonText: {
-    fontSize: 18,
+    fontSize: 10,
   },
 });
 

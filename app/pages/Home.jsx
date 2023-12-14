@@ -27,7 +27,7 @@ const Home = () => {
   console.log(text);
 
   const navigateToChat = () => {
-    navigation.navigate('Chat'); 
+    navigation.navigate("Chat");
   };
 
   const data = [
@@ -57,7 +57,7 @@ const Home = () => {
           }}
         >
           <Image
-            style={{ width: 30, height: 30 }}
+            style={{ width: 30, height: 30, marginLeft: 5 }}
             source={require("../assets/images/logo.png")}
           />
           <Pressable onPress={() => navigation.navigate("Profile")}>
@@ -87,6 +87,7 @@ const Home = () => {
           }}
         >
           <Pressable
+            onPress={() => navigation.navigate("Search")}
             style={{
               padding: 10,
               flexDirection: "row",
@@ -107,6 +108,7 @@ const Home = () => {
               color="black"
             />
             <TextInput
+              onPressIn={() => navigation.navigate("Search")}
               value={text}
               onChangeText={(text) => setText(text)}
               style={{ fontSize: 20, width: "90%", outlineStyle: "none" }}
@@ -146,8 +148,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/63/42/electronic-service-and-repair-icon-design-vector-35966342.webp"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopRightRadius: 20,
+                  borderTopLeftRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -163,7 +171,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat1</Text>
+                <Text>Electrical Services</Text>
               </View>
             </Pressable>
 
@@ -177,8 +185,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.vectorstock.com/i/1000x1000/21/78/repair-service-flat-icon-vector-7952178.webp"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopRightRadius: 20,
+                  borderTopLeftRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -194,7 +208,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat2</Text>
+                <Text>Mechanical Services</Text>
               </View>
             </Pressable>
             {/**category3 */}
@@ -207,8 +221,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopRightRadius: 20,
+                  borderTopLeftRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -225,7 +245,7 @@ const Home = () => {
                   marginBottom: 10,
                 }}
               >
-                <Text>cat3</Text>
+                <Text>Process Optimization</Text>
               </View>
             </Pressable>
             {/**category4 */}
@@ -238,8 +258,14 @@ const Home = () => {
               onPress={() => navigation.navigate("ServiceListPage")}
             >
               <Image
-                style={{ width: 180, height: 180, resizeMode: "contain" }}
-                source="https://cdn.icon-icons.com/icons2/3288/PNG/512/happy_emo_emoticon_emoji_icon_208299.png"
+                style={{
+                  width: 180,
+                  height: 180,
+                  resizeMode: "cover",
+                  borderTopRightRadius: 20,
+                  borderTopLeftRadius: 20,
+                }}
+                source={require("../assets/images/cat1.jpg")}
               />
               <View
                 style={{
@@ -251,11 +277,12 @@ const Home = () => {
                   marginTop: 10,
                   borderRadius: 90,
                   alignContent: "center",
+                  marginLeft: 10,
                   marginHorizontal: 15,
                   marginBottom: 10,
                 }}
               >
-                <Text>cat4</Text>
+                <Text>Consultation and Advisory</Text>
               </View>
             </Pressable>
           </View>
@@ -302,7 +329,7 @@ const Home = () => {
             style={styles.button}
             onPress={() => Alert.alert("Button pressed! ->feedback page")}
           >
-            <Text style={styles.buttonText}>Tap Me !</Text>
+            <Text style={styles.buttonText}>Suggest a service !</Text>
           </TouchableOpacity>
 
           <Text
@@ -321,10 +348,7 @@ const Home = () => {
         ></Text>
         <View></View>
       </ScrollView>
-      <TouchableOpacity
-        style={styles.floatingButton}
-        onPress={navigateToChat}
-      >
+      <TouchableOpacity style={styles.floatingButton} onPress={navigateToChat}>
         <Ionicons name="chatbubble-ellipses-outline" size={24} color="white" />
       </TouchableOpacity>
     </SafeAreaView>
@@ -360,6 +384,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#4A4E69",
     justifyContent: "center",
     alignItems: "center",
-    elevation: 5, 
+    elevation: 5,
   },
 });

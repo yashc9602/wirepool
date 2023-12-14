@@ -63,7 +63,7 @@ const ServiceDetailsPage = () => {
     >
       <ScrollView>
         <View>
-          <Text style={{ padding: 10, fontSize: 30, fontWeight: "bold" }}>
+          <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
             Electrical Services
           </Text>
           <View
@@ -79,7 +79,7 @@ const ServiceDetailsPage = () => {
                       backgroundColor: "#f2e9e4",
                       paddingVertical: 20,
                       width: 370,
-                      justifyContenct: "center",
+                      justifyContent: "space-around",
                       alignItems: "center",
                       marginTop: 10,
                       borderRadius: 20,
@@ -122,14 +122,14 @@ const ServiceDetailsPage = () => {
                         </Text>
                       </View>
                     </View>
-                    {/**fow add item */}
+                    {/**for add item */}
                     <View
                       style={{
                         flexDirection: "row",
                         backgroundColor: "white",
-                        paddingVertical: 2,
+                        paddingVertical: 1,
                         width: 100,
-                        justifyContenct: "center",
+                        justifyContent: "",
                         alignItems: "center",
                         marginTop: 10,
                         borderRadius: 90,
