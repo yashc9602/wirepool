@@ -10,8 +10,16 @@ import { Ionicons } from '@expo/vector-icons';
 import { Search, Bookings, Cart } from '../pages';
 import ProfilePage from "../pages/ProfilePage";
 import ServiceListPage from "../pages/ServiceListPage";
-import ServiceDetailsPage from "../pages/ServiceDetailsPage";
+import ServiceDetailsPage from "../pages/ServiceDetailsPage1";
 import Chat from "../pages/Chat";
+import ServiceList1 from "../pages/ServiceList1";
+import ServiceList4 from "../pages/ServiceList4";
+import ServiceList3 from "../pages/ServiceList3";
+import ServiceList2 from "../pages/ServiceList2";
+import ServiceDetailsPage1 from "../pages/ServiceDetailsPage1";
+import ServiceDetailsPage2 from "../pages/ServiceDetailsPage2";
+import ServiceDetailsPage4 from "../pages/ServiceDetailsPage4";
+import ServiceDetailsPage3 from "../pages/ServiceDetailsPage3";
 
 
 
@@ -139,8 +147,57 @@ const StackNavigator = () => {
           }}
         />
         <stack.Screen
-          name="ServiceDetailsPage"
-          component={ServiceDetailsPage}
+          name="ServiceList1"
+          component={ServiceList1}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceList2"
+          component={ServiceList2}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceList3"
+          component={ServiceList3}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceList4"
+          component={ServiceList4}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceDetailsPage1"
+          component={ServiceDetailsPage1}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceDetailsPage2"
+          component={ServiceDetailsPage2}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceDetailsPage3"
+          component={ServiceDetailsPage3}
+          options={{
+            headerShown: true,
+          }}
+        />
+        <stack.Screen
+          name="ServiceDetailsPage4"
+          component={ServiceDetailsPage4}
           options={{
             headerShown: true,
           }}

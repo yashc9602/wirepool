@@ -20,7 +20,7 @@ import { Entypo } from "@expo/vector-icons";
 import Corousel from "../components/Corousel";
 import { AntDesign } from "@expo/vector-icons";
 
-const ServiceDetailsPage = () => {
+const ServiceDetailsPage1 = () => {
   const navigation = useNavigation();
   const [text, setText] = React.useState("");
   console.log(text);
@@ -158,6 +158,6 @@ const ServiceDetailsPage = () => {
   );
 };
 
-export default ServiceDetailsPage;
+export default ServiceDetailsPage1;
 
 const styles = StyleSheet.create({});
