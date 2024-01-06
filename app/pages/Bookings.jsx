@@ -64,6 +64,7 @@ const Bookings = () => {
   });
 
   return (
+  
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <Text style={styles.heading}>Bookings</Text>
@@ -93,6 +94,25 @@ const Bookings = () => {
     </SafeAreaView>
   );
 };
+
+const tabIndicator = {
+  height: 30,
+  backgroundColor: '#c0b9dd',
+  position: 'absolute',
+  bottom: 0,
+  borderRadius: 20,
+  paddingHorizontal: 10, // Add padding for better appearance
+};
+
+// Example of how to dynamically set the width based on the content
+const tabText = 'All Bookings';
+const dynamicWidth = tabText.length * 10; // Adjust the factor as needed
+
+const dynamicTabIndicator = {
+  ...tabIndicator,
+  width: dynamicWidth, // Set the width dynamically based on the content
+};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -126,7 +146,7 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 90,
-    width: 300,
+    width: 350,
     marginBottom: 16,
     backgroundColor: '#c0b9dd',
     borderRadius: 20,
@@ -138,7 +158,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     borderRadius: 20,
-    width: 100,
+    width: 120,
     
 
   },

@@ -58,15 +58,15 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 90,
-    width: 300,
+    width: 350,
     marginBottom: 8,
   },
   rectangle: {
     backgroundColor: '#c0b9dd',
     borderRadius: 20,
     height: 90,
-    width: 300,
-    padding: 16,
+    width: 350,
+    padding: 8,
   },
   card: {
     backgroundColor: "#c0b9dd",
@@ -86,12 +86,19 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "bold",
+    marginLeft:8,
   },
   service: {
-    fontSize: 14,
+    fontSize: 16,
+    fontWeight: "bold",
+    marginLeft:8,
+
   },
   arrivalTime: {
-    fontSize: 12,
+    fontSize: 16,
+    fontWeight: "bold",
+    marginLeft:8,
+
   },
 });
 
