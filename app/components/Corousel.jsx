@@ -44,7 +44,7 @@ const Carousel = () => {
   const carouselData = [
     {
       id: "01",
-      image: require("../assets/images/slider_1.png"),
+      image: require("../assets/images/slider_1.jpg"),
     },
     {
       id: "02",
