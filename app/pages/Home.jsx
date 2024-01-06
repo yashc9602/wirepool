@@ -192,7 +192,7 @@ const Home = () => {
                   borderTopRightRadius: 20,
                   borderTopLeftRadius: 20,
                 }}
-                source={require("../assets/images/cat1.jpg")}
+                source={require("../assets/images/cat2.jpg")}
               />
               <View
                 style={{
@@ -228,7 +228,7 @@ const Home = () => {
                   borderTopRightRadius: 20,
                   borderTopLeftRadius: 20,
                 }}
-                source={require("../assets/images/cat1.jpg")}
+                source={require("../assets/images/cat3.jpg")}
               />
               <View
                 style={{
@@ -265,7 +265,7 @@ const Home = () => {
                   borderTopRightRadius: 20,
                   borderTopLeftRadius: 20,
                 }}
-                source={require("../assets/images/cat1.jpg")}
+                source={require("../assets/images/cat4.jpg")}
               />
               <View
                 style={{
