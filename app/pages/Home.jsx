@@ -145,7 +145,7 @@ const Home = () => {
                 borderRadius: 20,
                 margin: 3,
               }}
-              onPress={() => navigation.navigate("ServiceListPage")}
+              onPress={() => navigation.navigate("ServiceList1")}
             >
               <Image
                 style={{
@@ -182,7 +182,7 @@ const Home = () => {
                 borderRadius: 20,
                 margin: 3,
               }}
-              onPress={() => navigation.navigate("ServiceListPage")}
+              onPress={() => navigation.navigate("ServiceList2")}
             >
               <Image
                 style={{
@@ -218,7 +218,7 @@ const Home = () => {
                 borderRadius: 20,
                 margin: 3,
               }}
-              onPress={() => navigation.navigate("ServiceListPage")}
+              onPress={() => navigation.navigate("ServiceList3")}
             >
               <Image
                 style={{
@@ -255,7 +255,7 @@ const Home = () => {
                 borderRadius: 20,
                 margin: 3,
               }}
-              onPress={() => navigation.navigate("ServiceListPage")}
+              onPress={() => navigation.navigate("ServiceList4")}
             >
               <Image
                 style={{
