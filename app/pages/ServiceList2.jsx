@@ -30,29 +30,25 @@ import {
         title: "Machine Maintenance",
         paragraph:
           "Regular maintenance services to ensure machines operate at peak efficiency and longevity.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+          image: require("../assets/images/logo.png"),
       },
       {
         id: "2",
         title: "Equipment Installation",
         paragraph: "Expert installation of machinery and equipment tailored to specific industrial needs.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "3",
         title: "Conveyor Belt Repair",
         paragraph: "Specialized repair and maintenance services for conveyor belts, ensuring seamless operations.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "4",
         title: "HVAC System Maintenance",
         paragraph: "Comprehensive maintenance and repair services for HVAC systems to maintain optimal performance.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
     ];
     const handleItemClick = (item) => {
@@ -69,7 +65,7 @@ import {
         <ScrollView>
           <View>
             <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
-              Electrical
+              Mechanical
             </Text>
             <View
               style={{ flex: 1, justifyContent: "center", alignItems: "center" }}

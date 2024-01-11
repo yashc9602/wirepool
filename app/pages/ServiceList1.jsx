@@ -30,29 +30,25 @@ import {
         title: "Electrical Repair",
         paragraph:
           " Swift and efficient solutions for any electrical malfunctions, ensuring safety and functionality.",
-        image:
-          "https://www.collinsdictionary.com/images/full/wire_764416402.jpg",
+          image: require("../assets/images/logo.png"),
       },
       {
         id: "2",
         title: "Wiring and Rewiring",
         paragraph: "Expert services to set up or overhaul electrical wiring systems, adhering to safety standards.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "3",
         title: "Lighting Installation",
         paragraph: "Comprehensive installations of indoor and outdoor lighting solutions for various needs.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "4",
         title: "Circuit Breaker Replacement",
         paragraph: "Professional replacement and upgrade services for circuit breakers to ensure optimal electrical safety.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
     ];
     const handleItemClick = (item) => {
@@ -61,14 +57,14 @@ import {
     return (
       <SafeAreaView
         style={{
-          paddingTop: Platform.OS === "android" ? 10 : 0,
-          flex: 1,
-          backgroundColor: "white",
+          flexDirection: "row",
+            justifyContent: "space-between",
+            marginRight: 16,
         }}
       >
         <ScrollView>
           <View>
-            <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
+            <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold",marginTop:0}}>
               Electrical
             </Text>
             <View

@@ -15,7 +15,7 @@ const SearchFilter = ({ data, input, setInput }) => {
           if (input === "") {
             return (
               <View>
-                <Text onPress={() => navigation.navigate("ServiceDetailsPage")}
+                <Text onPress={() => navigation.navigate("ServiceDetailsPage1")}
                   style={{ fontSize: 20, fontWeight: "500", marginLeft: 40 }}
                 >
                   {item.name}

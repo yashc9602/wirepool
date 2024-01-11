@@ -30,29 +30,25 @@ import {
         title: "Process Efficiency Analysis",
         paragraph:
           "Detailed analysis of existing processes to identify areas for improvement and optimization.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+          image: require("../assets/images/logo.png"),
       },
       {
         id: "2",
         title: "Workflow Optimization",
         paragraph: "Tailored solutions to streamline workflows, enhance productivity, and reduce inefficiencies.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "3",
         title: "Quality Control Consultation",
         paragraph: "Expert guidance to implement robust quality control measures and standards.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "4",
         title: "Process Automation Solution",
         paragraph: "Innovative automation solutions to enhance process efficiency and reduce manual intervention.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
     ];
     const handleItemClick = (item) => {
@@ -68,8 +64,8 @@ import {
       >
         <ScrollView>
           <View>
-            <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
-              Electrical
+            <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold"}}>
+              Process optimization
             </Text>
             <View
               style={{ flex: 1, justifyContent: "center", alignItems: "center" }}

@@ -64,7 +64,7 @@ const ServiceDetailsPage1 = () => {
       <ScrollView>
         <View>
           <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
-            Electrical Services
+            Electrical Repair
           </Text>
           <View
             style={{ flex: 1, justifyContent: "center", alignItems: "center" }}

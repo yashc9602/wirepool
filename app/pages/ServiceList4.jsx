@@ -30,29 +30,25 @@ import {
         title: "Project Management Consultation",
         paragraph:
           "Expert guidance and strategies to effectively manage and execute projects of varying complexities.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+          image: require("../assets/images/logo.png"),
       },
       {
         id: "2",
         title: "Technical Advisory Services",
         paragraph: "Comprehensive technical advice and insights to navigate complex technological landscapes.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "3",
         title: "Business Process Consultation",
         paragraph: "Consultation services aimed at optimizing business processes for enhanced efficiency and profitability.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
       {
         id: "4",
         title: "Equipment Procurement Guidance",
         paragraph: "Expert advice on procuring the right equipment tailored to specific business needs and objectives.",
-        image:
-          "https://cdn.icon-icons.com/icons2/2367/PNG/512/check_small_icon_143632.png",
+        image: require("../assets/images/logo.png"),
       },
     ];
     const handleItemClick = (item) => {
@@ -69,7 +65,7 @@ import {
         <ScrollView>
           <View>
             <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
-              Electrical
+              Consultancy and Advisory
             </Text>
             <View
               style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
