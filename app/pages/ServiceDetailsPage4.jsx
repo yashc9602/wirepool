@@ -64,7 +64,7 @@ import {
         <ScrollView>
           <View>
             <Text style={{ padding: 20, fontSize: 30, fontWeight: "bold" }}>
-              Electrical Services
+            Project Management Consultation
             </Text>
             <View
               style={{ flex: 1, justifyContent: "center", alignItems: "center" }}

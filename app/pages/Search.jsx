@@ -18,16 +18,44 @@ const Search = () => {
   const navigation = useNavigation();
   const words = [
     {
-      name: " Electrical",
+      name: "Fan Installation/repair",
       id: 1,
     },
     {
-      name: " Consultant",
+      name: "Wiring and Rewiring",
       id: 2,
     },
     {
-      name: " Plumber",
+      name: "Lighting Intallation",
       id: 3,
+    },
+    {
+      name: "Lubrication Services",
+      id: 4,
+    },
+    {
+      name: "Wear and Tear Analysis",
+      id: 5,
+    },
+    {
+      name: "Emergency Repairs",
+      id: 6,
+    },
+    {
+      name: "Predictive Analytics",
+      id: 7,
+    },
+    {
+      name: "Performance Metrics",
+      id: 8,
+    },
+    {
+      name: "Capacity Analysis",
+      id: 9,
+    },
+    {
+      name: "Efficiency Metrics",
+      id: 10,
     },
   ];
   const [text, setText] = React.useState("");

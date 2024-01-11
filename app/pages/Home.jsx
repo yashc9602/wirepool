@@ -31,15 +31,14 @@ const Home = () => {
   };
 
   const data = [
-    { id: "1", title: "Item 1" },
-    { id: "2", title: "Item 2" },
-    { id: "3", title: "Item 3" },
-    { id: "4", title: "Item 4" },
+    { id: "1", title: "Wiring and Rewiring" },
+    { id: "2", title: "Circuit Breaker Replacement" },
+    { id: "3", title: "Process Efficiency Analysis" },
+    { id: "4", title: "Project Management Consultation" },
   ];
   const handleItemClick = (item) => {
-    navigation.navigate("ServiceListPage", { item });
+    navigation.navigate("ServiceList1", { item });
   };
-
   return (
     <SafeAreaView
       style={{

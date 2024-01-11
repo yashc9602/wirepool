@@ -42,7 +42,7 @@ const Cart = ({ route }) => {
     });
     return total;
   };
-
+ 
   const handleCheckout = () => {
     const total = calculateTotal();
     Alert.alert("Checkout", `Total Amount: Rs. ${total}`, [
