@@ -83,7 +83,7 @@ const ProfilePage = () => {
               marginLeft: 20,
             }}
           >
-            Username{user?.name}
+            Yash Choudhary{user?.name}
           </Text>
           <Text
             style={{
@@ -93,7 +93,7 @@ const ProfilePage = () => {
               marginLeft: 20,
             }}
           >
-            +91 99999999{user?.pno}
+            +91 8167549081{user?.pno}
           </Text>
         </View>
       </View>
